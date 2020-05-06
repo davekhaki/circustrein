@@ -14,7 +14,7 @@ namespace circustrein
                 {
                     if (animalNow.meatEater)
                     {
-                        Train.NewWagon(animalNow);
+                        Train.CreateNewWagon(animalNow);
                     }
                     else
                     {
@@ -29,7 +29,7 @@ namespace circustrein
                         }
                         if (!notAvailable)
                         {
-                            Train.NewWagon(animalNow);
+                            Train.CreateNewWagon(animalNow);
                         }
                     }
                 }

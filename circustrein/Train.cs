@@ -8,7 +8,7 @@ namespace circustrein
     public class Train
     {
         public static List<Wagon> wagons = new List<Wagon>();
-        public static Wagon NewWagon(Animal animal)
+        public static Wagon CreateNewWagon(Animal animal)
         {
             Wagon wagon = new Wagon();
             wagon.AddAnimal(animal);
