@@ -14,13 +14,13 @@ namespace circustreinUNITTEST
         {
             List<Animal> unsortedList = new List<Animal>();
 
-            unsortedList.Add(new Animal(Animal.sizes.klein, true));
-            unsortedList.Add(new Animal(Animal.sizes.middel, false));
-            unsortedList.Add(new Animal(Animal.sizes.middel, false));
-            unsortedList.Add(new Animal(Animal.sizes.groot, true));
-            unsortedList.Add(new Animal(Animal.sizes.klein, false));
+            unsortedList.Add(new Animal(Animal.AnimalSize.small, true));
+            unsortedList.Add(new Animal(Animal.AnimalSize.medium, false));
+            unsortedList.Add(new Animal(Animal.AnimalSize.medium, false));
+            unsortedList.Add(new Animal(Animal.AnimalSize.large, true));
+            unsortedList.Add(new Animal(Animal.AnimalSize.small, false));
 
-            List<Animal> sortedList = SortAnimalMethod.SortAnimals(unsortedList);
+            List<Animal> sortedList = WagonMethods.SortAnimals(unsortedList);
             string sortedAnimals = string.Join(",", sortedList);
             Assert.AreEqual("Size: groot, Eats meat: True,Size: klein, Eats meat: True,Size: middel, Eats meat: False,Size: middel, Eats meat: False,Size: klein, Eats meat: False", sortedAnimals);
         }

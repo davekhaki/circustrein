@@ -18,10 +18,10 @@ namespace circustrein
             }
             for (int i = 0; i < 10; i++)
             {
-                var size = RandomEnumValue<Animal.sizes>();
-                if(size == Animal.sizes.geen)
+                var size = RandomEnumValue<Animal.AnimalSize>();
+                if(size == Animal.AnimalSize.none)
                 {
-                    size = Animal.sizes.middel;
+                    size = Animal.AnimalSize.medium;
                 }
                 bool meat;
                 var decider = random.Next(0, 2);
@@ -42,7 +42,7 @@ namespace circustrein
             }
             Console.WriteLine("");
 
-            List<Animal> sortedAnimals = SortAnimalMethod.SortAnimals(circustrein);
+            List<Animal> sortedAnimals = WagonMethods.SortAnimals(circustrein);
             Console.WriteLine("Sorted Animals:");
             foreach(Animal bruh in sortedAnimals)
             {
@@ -50,10 +50,10 @@ namespace circustrein
             }
 
             Console.WriteLine("");
-            List<Wagon> finWagons = FillWagonMethod.FillWagon(sortedAnimals);
+            List<Wagon> finWagons = WagonMethods.FillTrain(sortedAnimals);
             foreach (Wagon bruhwagon in finWagons)
             {
-                Console.WriteLine($"Space used in wagon: {10 - bruhwagon.space}");
+                Console.WriteLine($"Space used in wagon: {10 - bruhwagon.Space}");
                 foreach( Animal animalInWagon in bruhwagon.Animals)
                 {
                     Console.WriteLine(animalInWagon);

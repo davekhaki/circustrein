@@ -13,7 +13,7 @@ namespace circustreinUNITTEST
         public void ToStringTest()
         {
             Animal animal = new Animal(
-                Animal.sizes.groot,
+                Animal.AnimalSize.large,
                 true
             );
 

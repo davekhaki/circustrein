@@ -6,26 +6,26 @@ namespace circustrein
 {
     public class Animal
     {
-        public enum sizes
+        public enum AnimalSize
         {
-            groot = 5,
-            middel = 3,
-            klein = 1,
-            geen = 0
+            large = 5,
+            medium = 3,
+            small = 1,
+            none = 0
         }
 
-        public bool meatEater { get; set; }
+        public bool MeatEater { get; set; }
 
-        public sizes Size;
+        public AnimalSize Size;
 
-        public Animal(sizes size, bool MeatEater)
+        public Animal(AnimalSize size, bool MeatEater)
         {
             Size = size;
-            meatEater = MeatEater;
+            this.MeatEater = MeatEater;
         }
         public override string ToString()
         {
-            return $"Size: {Size}, Eats meat: {meatEater}";
+            return $"Size: {Size}, Eats meat: {MeatEater}";
         }
     }
 }

@@ -9,14 +9,14 @@ namespace circustrein
     {
         public List<Animal> Animals = new List<Animal>();
 
-        public int space { get; private set; } = 10;
+        public int Space { get; private set; } = 10;
 
-        public Animal.sizes BigMeatEater()
+        private Animal.AnimalSize GetMeatEater()
         {
-            List<Animal> MeatEaterList = Animals.Where(Animal => Animal.meatEater).ToList();
+            List<Animal> MeatEaterList = Animals.Where(Animal => Animal.MeatEater).ToList();
             if(MeatEaterList.Count == 0)
             {
-                return Animal.sizes.geen;
+                return Animal.AnimalSize.none;
 
             }
             else
@@ -26,10 +26,10 @@ namespace circustrein
         }
         public bool AddAnimal(Animal newAnimal)
         {
-            if(newAnimal.Size > BigMeatEater() && (int) newAnimal.Size <= space)
+            if(newAnimal.Size > GetMeatEater() && (int) newAnimal.Size <= Space)
             {
                 Animals.Add(newAnimal);
-                space = space - (int)newAnimal.Size;
+                Space = Space - (int)newAnimal.Size;
                 return true;
             }
             else
@@ -40,7 +40,7 @@ namespace circustrein
         
         public override string ToString()
         {
-            return $"{10 - space}";           
+            return $"{10 - Space}";           
         }
     }
 }

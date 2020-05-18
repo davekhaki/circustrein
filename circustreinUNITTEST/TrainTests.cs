@@ -13,9 +13,9 @@ namespace circustreinUNITTEST
         public void NewWagonTest()
         {
             //test to check the amount of space is used.
-            Animal animal = new Animal(Animal.sizes.klein, false);
+            Animal animal = new Animal(Animal.AnimalSize.small, false);
 
-            string animalsInWagon = string.Join(",", Train.NewWagon(animal));
+            string animalsInWagon = string.Join(",", Train.CreateNewWagon(animal));
        
             Assert.AreEqual("1", animalsInWagon);
         }
